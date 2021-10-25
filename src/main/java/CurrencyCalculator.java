@@ -11,15 +11,15 @@ public class CurrencyCalculator {
     public static void main(String[] args){
         //Only show once
         System.out.println("Welcome to currency converter");
-        while (startOver == "Y" || startOver == "y") {
+        while (startOver.equals("Y") || startOver.equals("y")) {
             FirstScreen();
         //If the input was correct and get the rate
             switch (input) {
                 case 1:
                     //USD
                     try {
-                        Coin USDcurrency = new USD();
-                        rate = USDcurrency.getValue();
+                        Coin USDCurrency = new USD();
+                        rate = USDCurrency.getValue();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -27,14 +27,14 @@ public class CurrencyCalculator {
                 case 2:
                     //ILS
                     try {
-                        Coin ILScurrency = new ILS();
-                        rate = ILScurrency.getValue();
+                        Coin ILSCurrency = new ILS();
+                        rate = ILSCurrency.getValue();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     break;
                 default:
-                    //in case niether 1 or 2 was the input
+                    //in case either 1 or 2 was the input
                     System.out.println("The invalid input was entered");
                     FirstScreen();
             }
@@ -86,6 +86,6 @@ public class CurrencyCalculator {
         return startOver;
     }
     public static void FourthScreen(){
-        System.out.println("Thanks for using our currency converter");
+        System.out.println("Thanks for using our currency converter!");
     }
 }
