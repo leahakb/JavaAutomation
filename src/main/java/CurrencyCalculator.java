@@ -74,7 +74,7 @@ public class CurrencyCalculator {
         //if startOver is not Y or y
         FourthScreen();
             //write to file
-        String filePath = "C:\\Users\\Yelena\\IdeaProjects\\JavaAutomation\\src\\main\\conversions_list.txt";
+        String filePath = "C:\\Users\\Yelena\\IdeaProjects\\JavaAutomation\\src\\main\\results.txt";
         try (BufferedWriter toFile = new BufferedWriter(new FileWriter(filePath))){
             for (Double conversion: conversions){
                 toFile.write(String.valueOf(conversion));
@@ -87,7 +87,8 @@ public class CurrencyCalculator {
 
         try {
             String fileContent = new String(Files.readAllBytes(Paths.get(filePath)));
-            System.out.println("File content:" +fileContent);
+            System.out.println("File content:");
+            System.out.println(fileContent);
         } catch (IOException e) {
             e.printStackTrace();
         }
