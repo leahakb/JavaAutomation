@@ -87,7 +87,7 @@ public class CurrencyCalculator {
 
         try {
             String fileContent = new String(Files.readAllBytes(Paths.get(filePath)));
-            System.out.println("File content:");
+            System.out.println("Your conversions were as follows:");
             System.out.println(fileContent);
         } catch (IOException e) {
             e.printStackTrace();
@@ -98,15 +98,28 @@ public class CurrencyCalculator {
     //Welcome Screen with input of currency choice
     public static Integer FirstScreen(){
         System.out.println("Please choose an option (1/2):");
-        Scanner scanner = new Scanner(System.in);
-        input = scanner.nextInt();
+        System.out.println("1. Dollars to Shekels");
+        System.out.println("2. Shekels to Dollars");
+        try {
+            Scanner scanner = new Scanner(System.in);
+            input = scanner.nextInt();
+        } catch (Exception e) {
+            System.out.println("Input Mismatch! Try Again");
+            FirstScreen();
+        }
         return input;
     }
     //Second screen with input of amount
     public static double SecondScreen(){
         System.out.println("Please enter an amount to convert");
-        Scanner scanner = new Scanner(System.in);
-        amount = scanner.nextDouble();
+        try {
+            Scanner scanner = new Scanner(System.in);
+            amount = scanner.nextDouble();
+        }
+        catch (Exception e) {
+            System.out.println("Input Mismatch! Try Again");
+            SecondScreen();
+    }
         return amount;
     }
     //Third screen with conversion calculation
