@@ -17,13 +17,21 @@ public class CurrencyCalculator {
             switch (input) {
                 case 1:
                     //USD
-                    Coin USDcurrency = new USD();
-                    rate = USDcurrency.getValue();
+                    try {
+                        Coin USDcurrency = new USD();
+                        rate = USDcurrency.getValue();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 2:
                     //ILS
-                    Coin ILScurrency = new ILS();
-                    rate = ILScurrency.getValue();
+                    try {
+                        Coin ILScurrency = new ILS();
+                        rate = ILScurrency.getValue();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 default:
                     //in case niether 1 or 2 was the input
