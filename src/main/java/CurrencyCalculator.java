@@ -1,5 +1,12 @@
+//for input
+import java.io.FileWriter;
 import java.util.Scanner;
-
+//for array
+import java.util.ArrayList;
+//for file manipulation
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class CurrencyCalculator {
 
@@ -9,6 +16,8 @@ public class CurrencyCalculator {
     private static String startOver = "Y";
 
     public static void main(String[] args){
+        //create an array for the list of results
+        ArrayList <Double>conversions = new ArrayList<>();
         //Only show once
         System.out.println("Welcome to currency converter");
         while (startOver.equals("Y") || startOver.equals("y")) {
@@ -44,22 +53,46 @@ public class CurrencyCalculator {
                 SecondScreen();
                 USD total = new USD();
                 ThirdScreen();
+                //add a converted amount to an array
+                conversions.add(total.calculate(amount));
                 System.out.println(total.calculate(amount));
-                System.out.println(StartOver());
+                StartOver();
             } else if (rate == 0.28) {
 
                 //ILS
                 SecondScreen();
                 ILS total = new ILS();
                 ThirdScreen();
+                //add a converted amount to an array
+                conversions.add(total.calculate(amount));
                 System.out.println(total.calculate(amount));
-                System.out.println(StartOver());
+                StartOver();
             } else System.out.println("Start over!");
         }
-        if (startOver != "Y" || startOver != "y")
+        //if startOver is not Y or y
         FourthScreen();
+            //write to file
+        String filePath = "C:\\Users\\Yelena\\IdeaProjects\\JavaAutomation\\src\\main\\conversions_list.txt";
+        try {
+            FileWriter toFile = new FileWriter(filePath);
+            for (Double conversion: conversions){
+                toFile.write(conversion + System.lineSeparator());
+                System.out.println(conversion);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+            //print from file
 
+        try {
+            String fileContent = new String(Files.readAllBytes(Paths.get(filePath)));
+            System.out.println("File content:" +fileContent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
     //Welcome Screen with input of currency choice
     public static Integer FirstScreen(){
         System.out.println("Please choose an option (1/2):");
