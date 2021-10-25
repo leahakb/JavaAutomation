@@ -1,4 +1,6 @@
 //for input
+import java.io.BufferedWriter;
+import java.io.FileFilter;
 import java.io.FileWriter;
 import java.util.Scanner;
 //for array
@@ -73,11 +75,10 @@ public class CurrencyCalculator {
         FourthScreen();
             //write to file
         String filePath = "C:\\Users\\Yelena\\IdeaProjects\\JavaAutomation\\src\\main\\conversions_list.txt";
-        try {
-            FileWriter toFile = new FileWriter(filePath);
+        try (BufferedWriter toFile = new BufferedWriter(new FileWriter(filePath))){
             for (Double conversion: conversions){
-                toFile.write(conversion + System.lineSeparator());
-                System.out.println(conversion);
+                toFile.write(String.valueOf(conversion));
+                toFile.write((System.lineSeparator()));
             }
         } catch (Exception e) {
             e.printStackTrace();
