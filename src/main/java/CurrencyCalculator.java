@@ -10,7 +10,7 @@ public class CurrencyCalculator {
     public static void main(String[] args){
 
         FirstScreen();
-
+//If if the input was correct and get the rate
         switch(input){
             case 1:
                 //USD
@@ -27,14 +27,17 @@ public class CurrencyCalculator {
                 System.out.println("The invalid input was entered");
                 FirstScreen();
         }
-
+//Based on the rate calculate the conversion total
         if (rate == 3.52) {
+            //USD
             SecondScreen();
             USD total = new USD();
             ThirdScreen();
             System.out.println(total.calculate(amount));
         }
         else if (rate == 0.28){
+
+            //ILS
             SecondScreen();
             ILS total = new ILS();
             ThirdScreen();
@@ -44,7 +47,7 @@ public class CurrencyCalculator {
 
 
     }
-    //Welcome Screen with imput of currency choice
+    //Welcome Screen with input of currency choice
     public static Integer FirstScreen(){
         System.out.println("Welcome to currency converter");
         System.out.println("Please choose an option (1/2):");
