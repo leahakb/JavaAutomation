@@ -1,6 +1,8 @@
-public class ILS extends Coin {
+package Convert;
 
-    private final double value = 0.28;
+public class USD extends Coin {
+
+    private final double value = 3.52;
 
     @Override
     public double getValue() {
@@ -12,4 +14,3 @@ public class ILS extends Coin {
         return input * getValue();
     }
 }
-

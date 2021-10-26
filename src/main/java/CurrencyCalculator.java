@@ -1,6 +1,5 @@
 //for input
 import java.io.BufferedWriter;
-import java.io.FileFilter;
 import java.io.FileWriter;
 import java.util.Scanner;
 //for array
@@ -9,6 +8,8 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import Convert.*;
 
 public class CurrencyCalculator {
 
