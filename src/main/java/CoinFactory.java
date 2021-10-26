@@ -4,9 +4,9 @@ public class CoinFactory {
             return null;
         }
         switch (coin){
-            case Coins.ILS:
+            case ILS:
                 return new ILS();
-            case Coins.USD:
+            case USD:
                 return new USD();
         }
         return null;
