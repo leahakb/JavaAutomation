@@ -1,14 +1,13 @@
-package Convert;
-
+//import Convert.*;
 public class CoinFactory {
     public static ICalculate getCoinInstance(Coins coin){
         if(coin == null){
             return null;
         }
         switch (coin){
-            case ILS:
+            case Coins.ILS:
                 return new ILS();
-            case USD:
+            case Coins.USD:
                 return new USD();
         }
         return null;

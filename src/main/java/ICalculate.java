@@ -1,4 +1,4 @@
-package Convert;
+//import Convert.*;
 
 public interface ICalculate {
 
