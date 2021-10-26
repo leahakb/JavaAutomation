@@ -1,4 +1,3 @@
-import Convert.*;
 
 public abstract class Coin implements ICalculate{
 

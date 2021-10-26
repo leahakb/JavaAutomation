@@ -1,4 +1,3 @@
-//import Convert.*;
 
 public interface ICalculate {
 
