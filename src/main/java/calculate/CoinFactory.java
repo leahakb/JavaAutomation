@@ -1,4 +1,8 @@
-package convert;
+package calculate;
+
+import coins.Coins;
+import coins.ILS;
+import coins.USD;
 
 public class CoinFactory {
     public static ICalculate getCoinInstance(Coins coin){

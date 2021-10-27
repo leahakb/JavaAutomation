@@ -1,4 +1,5 @@
-import convert.*;
+import calculate.*;
+import coins.*;
 //for input
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -47,7 +48,7 @@ public class CurrencyCalculator {
                     break;
                 default:
                     //in case either 1 or 2 was the input
-                    System.out.println("The invalid input was entered");
+                    System.out.println("Invalid Choice, please try again");
                     FirstScreen();
             }
         //Based on the rate calculate the conversion total
@@ -118,7 +119,7 @@ public class CurrencyCalculator {
             amount = scanner.nextDouble();
         }
         catch (Exception e) {
-            System.out.println("Input Mismatch! Try Again");
+            System.out.println("Invalid Choice, please try again");
             SecondScreen();
     }
         return amount;

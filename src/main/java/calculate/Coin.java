@@ -1,4 +1,4 @@
-package convert;
+package calculate;
 
 public abstract class Coin implements ICalculate {
 
