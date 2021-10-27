@@ -1,3 +1,5 @@
+package convert;
+
 public class CoinFactory {
     public static ICalculate getCoinInstance(Coins coin){
         if(coin == null){
